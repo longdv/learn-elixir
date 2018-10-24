@@ -1,0 +1,22 @@
+version: '2'
+services:
+  learn-elixir:
+    container_name: learn-elixir
+    # depends_on:
+      # - leave_postgres
+    # environment:
+      # DB_NAME: leave_management_production
+    # networks:
+      # - cbappsnet
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # command: sh -c "iex"
+    # ports:
+      # - "0.0.0.0:4000:4000"
+    volumes:
+      - ".:/learn-elixir"
+    # links:
+      # - leave_postgres
+    stdin_open: true
+    tty: true
